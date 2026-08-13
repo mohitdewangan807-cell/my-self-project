@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Online Python Compiler (Interpreter) - Programiz  </title>
+  <link rel="shortcut icon" href="https://www.programiz.com/sites/tutorial2program/files/favicon.png" />
+  <link rel="stylesheet" href="https://fonts.programiz.com/fonts.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+  <link rel="canonical" href="https://www.programiz.com/python-programming/online-compiler/" />
+  <meta name="description" content="Write and run your Python code using our online compiler. Enjoy additional features like code sharing, dark mode, and support for multiple programming languages." />
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://programiz.com/python-programming/online-compiler/" />
+  <meta property="og:title" content="Online Python Compiler (Interpreter) - Programiz" />
+  <meta property="og:description" content="Write and run your Python code using our online compiler. Enjoy additional features like code sharing, dark mode, and support for multiple programming languages." />
+  <meta property="og:image" content="https://programiz.com/online-compiler/assets/logos/compiler_logo.png" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://programiz.com/python-programming/online-compiler/" />
+  <meta name="twitter:title" content="Online Python Compiler (Interpreter) - Programiz">
+  <meta name="twitter:description" content="Write and run your Python code using our online compiler. Enjoy additional features like code sharing, dark mode, and support for multiple programming languages." />
+  <meta name="twitter:image" content="https://programiz.com/online-compiler/assets/logos/compiler_logo.png" />
+
+  <!-- CMP and header ad code start -->
+  <script>
+    var url = window.location.href;
+    window.googletag = window.googletag || {
+      cmd: []
+    };
+    window.googletag.cmd.push(function() {
+      switch (true) {
+        case url.includes("/python-programming/numpy"):
+          window.googletag.pubads().setTargeting('prog_lang', 'numpy');
+          break;
+        case url.includes("/sql"):
+          window.googletag.pubads().setTargeting('prog_lang', 'sql');
+          break;
+        case url.includes("/c-programming"):
+          window.googletag.pubads().setTargeting('prog_lang', 'c_programming');
+          break;
+        case url.includes("/cpp-programming"):
+          window.googletag.pubads().setTargeting('prog_lang', 'c_plus_plus');
+          break;
+        case url.includes("/csharp-programming"):
+          window.googletag.pubads().setTargeting('prog_lang', 'c_sharp_lang');
+          break;
+        case url.includes("/dsa"):
+          window.googletag.pubads().setTargeting('prog_lang', 'dsa');
+          break;
+        case url.includes("/java-programming"):
+          window.googletag.pubads().setTargeting('prog_lang', 'java');
+          break;
+        case url.includes("/javascript"):
+          window.googletag.pubads().setTargeting('prog_lang', 'javascript');
+          break;
+        case url.includes("/kotlin-programming"):
+          window.googletag.pubads().setTargeting('prog_lang', 'kotlin');
+          break;
+        case url.includes("/python-programming"):
+          window.googletag.pubads().setTargeting('prog_lang', 'python');
+          break;
+        case url.includes("/swift-programming"):
+          window.googletag.pubads().setTargeting('prog_lang', 'swift');
+          break;
+        case url.includes("/typescript"):
+          window.googletag.pubads().setTargeting('prog_lang', 'typescript');
+          break;
+        case url.includes("/scala"):
+          window.googletag.pubads().setTargeting('prog_lang', 'scala');
+          break;
+        case url.includes("/dart"):
+          window.googletag.pubads().setTargeting('prog_lang', 'dart');
+          break;
+        case url.includes("/ruby"):
+          window.googletag.pubads().setTargeting('prog_lang', 'ruby');
+          break;
+        case url.includes("/bash"):
+          window.googletag.pubads().setTargeting('prog_lang', 'bash');
+          break;
+      }
+
+      window.googletag.pubads().enableAsyncRendering();
+      window.googletag.pubads().disableInitialLoad();
+    });
+
+    const injectPgScript = (src, isAsync, onLoadCallback, target) => {
+      if (!src) return;
+      const script = document.createElement("script");
+      script.src = src;
+      if (isAsync) script.async = isAsync;
+      if (onLoadCallback) script.onload = onLoadCallback;
+
+      (target || document.head).appendChild(script);
+    };
+
+    const initiatePgAds = () => {
+      !!window.__tcfapi && window.__tcfapi("addEventListener", 2, (tcData, success) => {
+        if (success && (tcData.eventStatus === "useractioncomplete" || tcData.eventStatus === "tcloaded" || tcData.gdprApplies === false)) {
+          if (!window._initAds) {
+            window._initAds = true;
+
+            injectPgScript("//fms.360yield.com/ow/bundles/live/pubgalaxy/publishers/Programizcomnew.min.js", true);
+            injectPgScript("//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", true);
+            injectPgScript("//btloader.com/tag?o=5184339635601408&upapi=true", true);
+            injectPgScript("//srvb1.com/o.js?uid=3de5c6e969bcbef63f8b7a59", true, null, document.body);
+          }
+        }
+      });
+    };
+
+    // Deferring the actual initiatePgAds() call (not the consent gate itself,
+    // which still fires as soon as CONSENT_API_READY is ready) off the main
+    // thread during initial page load -- this ad-tech stack was measured
+    // (Lighthouse) contributing several seconds of Script Evaluation time
+    // and CLS, competing directly with the editor UI becoming interactive.
+    // requestIdleCallback runs it once the browser is actually idle;
+    // the timeout ceiling (and setTimeout fallback for browsers without
+    // requestIdleCallback, e.g. older Safari) makes sure ads still load
+    // promptly rather than waiting indefinitely on a busy main thread.
+    const runWhenIdle = (fn) => {
+      if (typeof window.requestIdleCallback === "function") {
+        window.requestIdleCallback(fn, { timeout: 1000 });
+      } else {
+        setTimeout(fn, 1);
+      }
+    };
+
+    injectPgScript("https://securepubads.g.doubleclick.net/tag/js/gpt.js?network-code=8095840", true, () => {
+      window.googlefc = window.googlefc || {
+        callbackQueue: []
+      };
+      window.googlefc.callbackQueue.push({
+        "CONSENT_API_READY": () => runWhenIdle(initiatePgAds)
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+    window.googletag = window.googletag || {};
+    window.googletag.cmd = window.googletag.cmd || [];
+    window.googletag.cmd.push(function() {
+      window.googletag.pubads().enableAsyncRendering();
+      window.googletag.pubads().disableInitialLoad();
+    });
+    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+  </script>
+  <script>
+    // GA4 initialization
+    (function(w, d) {
+      const gaId = 'G-YJM03XN8Q2';
+      w.dataLayer = w.dataLayer || [];
+
+      function gtag() {
+        w.dataLayer.push(arguments);
+      }
+      w.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', gaId, {
+        send_page_view: false
+      });
+    })(window, document);
+  </script>
+  <!-- CMP and header tag ad code end -->
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKXT7MH');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Buy sellads CSS-->
+  <style>
+    .pgAdWrapper {
+      min-height: 0 !important;
+    }
+  </style>
+
+  <!-- Generated using https://dns-prefetch-generator.github.io/ -->
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <link rel="dns-prefetch" href="//www.googletagservices.com" />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//c.amazon-adsystem.com" />
+  <link rel="dns-prefetch" href="//dsh7ky7308k4b.cloudfront.net" />
+  <link rel="dns-prefetch" href="//securepubads.g.doubleclick.net" />
+  <link rel="dns-prefetch" href="//adservice.google.com" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.playground-v2.programiz.com/build/styles.b97d5c7bfc97f5421c09.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+
+<body>
+  <!-- <select id="language-changer"></select> -->
+  <div class="container" id="root" data-lang="python">
+    <div class="spinner">
+      <div class="loader"><span>{</span><span>}</span></div>
+    </div>
+    <div class="mobile-nav-drawer">
+      <div class="nav-backdrop">
+      </div>
+      <div class="nav-menu">
+        <div class="nav-header-wrapper">
+          <div class="nav-logo-title-wrapper">
+            <a href="https://www.programiz.com/" target="_blank" class="nav-logo-link">
+              <img id="nav-logo" src="https://cdn.playground-v2.programiz.com/assets/logos/logo.svg" />
+            </a>
+          </div>
+          <button type="button" class="close-nav-btn" title="Close navigation">
+            <img class="svg" src="https://cdn.playground-v2.programiz.com/assets/icons/close.svg" />
+          </button>
+        </div>
+        <div class="nav-menu-list">
+          <a target="_blank"
+            href="https://www.programiz.com/python-programming/online-compiler/"
+            class="change-lang-row python active"
+            title="Online Python Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/python.svg" alt="Python Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online Python Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/r/online-compiler/"
+            class="change-lang-row r " class="change-lang-row r"
+            title="Online R Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/r.svg" alt="R Programming Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online R Compiler
+            </span>
+          </a>
+          <a target="_blank" href="https://www.programiz.com/sql/online-compiler/" class="change-lang-row sql"
+            title="Online SQL Editor">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/sql.svg" alt="SQL Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online SQL Editor
+            </span>
+          </a>
+          <a target="_blank" href="https://www.programiz.com/html/online-compiler/" class="change-lang-row html"
+            title="Online HTML/CSS Editor">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/html.svg" alt="HTML/CSS Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online HTML/CSS Editor
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/java-programming/online-compiler/"
+            class="change-lang-row java " title="Online Java Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/java.svg" alt="Java Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online Java Compiler
+            </span>
+          </a>
+          <!-- <a target="_blank"
+            href="https://www.programiz.com/kotlin-programming/online-compiler/"
+            class="change-lang-row kotlin "
+            title="Online Kotlin Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="./assets/icons/kotlin.svg" />
+            </span>
+            <span class="nav-menu-text">
+              Online Kotlin Compiler
+            </span>
+          </a> -->
+          <a target="_blank"
+            href="https://www.programiz.com/c-programming/online-compiler/"
+            class="change-lang-row c " title="Online C Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/c.svg" alt="C Programming Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online C Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/cpp-programming/online-compiler/"
+            class="change-lang-row cpp " title="Online C++ Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/cpp.svg" alt="C++ Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online C++ Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/csharp-programming/online-compiler/"
+            class="change-lang-row csharp " title="Online C# Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/csharp.svg" alt="C# Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online C# Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/javascript/online-compiler/"
+            class="change-lang-row javascript "
+            title="Online JavaScript Compiler (Editor)">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/javascript.svg" alt="JavaScript Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online JavaScript Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/typescript/online-compiler/"
+            class="change-lang-row typescript "
+            title="Online Typescript Compiler (Editor)">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg"
+                src="https://cdn.playground-v2.programiz.com/assets/icons/typescript.svg" alt="Typescript Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online Typescript Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/golang/online-compiler/"
+            class="change-lang-row golang "
+            title="Online GoLang Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/golang.svg" alt="Golang Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online GoLang Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/rust/online-compiler/"
+            class="change-lang-row rust " title="Online Rust Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/rust.svg" alt="Rust Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online Rust Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/scala/online-compiler/"
+            class="change-lang-row scala "
+            title="Scala Online Compiler (Editor)">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="./assets/icons/scala.svg" />
+            </span>
+            <span class="nav-menu-text">
+              Scala Online Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/dart/online-compiler/"
+            class="change-lang-row dart "
+            title="Dart Online Compiler (Editor)">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="./assets/icons/dart.svg" />
+            </span>
+            <span class="nav-menu-text">
+              Dart Online Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/ruby/online-compiler/"
+            class="change-lang-row ruby "
+            title="Ruby Online Compiler (Editor)">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="./assets/icons/ruby.svg" />
+            </span>
+            <span class="nav-menu-text">
+              Ruby Online Compiler
+            </span>
+          </a>
+          <!-- <a target="_blank"
+            href="https://www.programiz.com/bash/online-compiler/"
+            class="change-lang-row bash "
+            title="Online bash Compiler (Editor)">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="./assets/icons/bash.svg" alt="bash Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online Bash Interpreter
+            </span>
+          </a> -->
+          <a target="_blank"
+            href="https://www.programiz.com/php/online-compiler/"
+            class="change-lang-row php " title="Online PHP Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/php.svg" alt="PHP Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online PHP Compiler
+            </span>
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/swift/online-compiler/"
+            class="change-lang-row swift " title="Online Swift Compiler">
+            <span class="change-lang-btn">
+              <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/swift.svg" alt="Swift Online" />
+            </span>
+            <span class="nav-menu-text">
+              Online Swift Compiler
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Share code -->
+
+    <!-- Progress bar: share link generating modal -->
+    <div class="share-link-generating-modal" style="display: none;">
+      <div class="modal-backdrop-share">
+      </div>
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Generating Link</h2>
+          <h2 class="modal-title modal-title-mob">Generating Link</h2>
+        </div>
+        <div class="modal-body">
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification " id="notification"
+      style="display:none;">
+      <div class="check-icon-wrapper">
+        <img src="https://cdn.playground-v2.programiz.com/assets/icons/check.svg" alt="check">
+      </div>
+
+      <div class="notification-message-wrapper">
+        <p class="notification-message"></p>
+        <button type="button" class="close-modal-notification" title="Close">
+          <img class="svg" src="https://cdn.playground-v2.programiz.com/assets/icons/close-v2-small.svg" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Share link modal -->
+    <div class=" share-link-modal" style="display: none;">
+      <div class="modal-backdrop-share">
+      </div>
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Share your code</h2>
+          <h2 class="modal-title modal-title-mob">Share code</h2>
+          <button type="button" class="close-modal" title="Close">
+            <img class="svg" src="https://cdn.playground-v2.programiz.com/assets/icons/close.svg" />
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="share-code-container">
+            <input type="text" class="share-code-value" value="https://www.programiz.com/online-compiler/XXXXXXXXX"
+              readonly />
+          </div>
+          <button class="share-code-copy-btn" title="Copy Link">Copy Link</button>
+          <button class="share-code-copy-btn code-copied-success" title="Copied to clipboard">
+            <img src="https://cdn.playground-v2.programiz.com/assets/icons/check.svg" alt="success" class="svg">
+            Copied to clipboard
+          </button>
+
+          <!-- Social media share -->
+          <div class="social-wrapper">
+            <span>or share using</span>
+            <div id="social-icons">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Share code end -->
+
+    <div class="wrapper has-adhesive-ad">
+      <div class="header">
+        <div class="header-wrapper">
+          <div class="burger-menu">
+            <button type="button" class="burger-menu-btn" title="Open navigation">
+              <img class="svg burger-menu-btn-icon" src="https://cdn.playground-v2.programiz.com/assets/icons/burger.svg" />
+            </button>
+          </div>
+          <div class="logo-wrapper">
+            <h1 class="logo-title-wrapper">
+              <a href="https://www.programiz.com/" target="_blank" class="logo-link">
+                <img id="logo" src="https://cdn.playground-v2.programiz.com/assets/logos/logo.svg" />
+                <span class="logo-sub-title-wrapper">
+                  <span class="logo-sub-title">
+                    Python                    Online Compiler                  </span>
+                </span>
+              </a>
+            </h1>
+          </div>
+        </div>
+        <div class="compiler-header-ad">
+          <!-- Pub-galaxy -->
+          <div id="div-gpt-ad-Programizcom36786" class="content-top-ad"></div>
+        </div>
+        <div id="add-replacement"></div>
+        <div id="feedback-desktop">
+          <a id="ad-link">&nbsp;Learn Python App</a>
+        </div>
+        <div id="feedback-mobile">
+          <a id="mobile-ad-link">&nbsp;Learn Python</a>
+        </div>
+      </div>
+      
+      <div class="mobile-ad-wrapper clearfix">
+        <!-- TAGNAME: Programiz_Compiler_Mobile_300x250 -->
+        <div id='programizcom50430'>
+        </div>
+      </div>
+
+      <div class="mobile-top-bar clearfix">
+        <div class="pills-wrapper">
+          <div class="pills clearfix">
+            <button class="pill active compiler-pill" id="executed-file-name-mobile"
+              title="main.py">
+              main.py            </button>
+            <button class="pill shell-pill">
+              Output            </button>
+          </div>
+        </div>
+
+        <div class="other-options-wrapper">
+          <!-- <div id="feedback-mobile" class="options-item-wrapper">
+              <a href="https://programiz.com/contact" class="options-item">
+                <img class="svg" src="https://cdn.playground-v2.programiz.com/assets/icons/message-square.svg" />
+              </a>
+            </div> -->
+          <!-- Icon-only in this slot (unlike the desktop nav button and the bottom floating
+               button, both of which keep their text) - matches .mobile-top-bar-run-button right
+               next to it, which has never had a text label either. .visualize-text stays in the
+               markup (hidden via CSS) rather than being removed, so this element's structure
+               matches the other two Visualize buttons exactly - same two-icon-plus-text-span
+               shape, just with the text hidden here specifically. -->
+          <div class="mobile-top-bar-visualize-button visualize"
+            style="display: flex"
+            title="Visualize">
+              <!-- Replaces the previous plain "hierarchy" (3 boxes + connector lines) icon with
+                   the real Visualize feature icon: a fixed teal/cyan gradient (fill="currentColor"
+                   deliberately dropped - this icon carries its own brand colors via the stroke
+                   gradients below, unlike this button's plain content-colored stop-icon, so it
+                   doesn't adapt to light/dark text color the way the old icon did). Sized 24x24 to
+                   match this icon's own previous on-screen size exactly, viewBox swapped to the
+                   new icon's native 16x16 coordinate system - a straight asset swap, not a resize. -->
+              <svg
+                class="visualize-start-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00004 1.33331L14.6667 5.66665V10.3333L8.00004 14.6666L1.33337 10.3333V5.66665L8.00004 1.33331V1.33331Z" stroke="url(#paint0_linear_26731_46345)" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8 14.6666V10.3333" stroke="url(#paint1_linear_26731_46345)" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M14.6667 5.66669L8.00004 10.3334L1.33337 5.66669" stroke="url(#paint2_linear_26731_46345)" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M1.33337 10.3334L8.00004 5.66669L14.6667 10.3334" stroke="url(#paint3_linear_26731_46345)" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8 1.33331V5.66665" stroke="url(#paint4_linear_26731_46345)" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+                <defs>
+                  <linearGradient id="paint0_linear_26731_46345" x1="8.00004" y1="1.33331" x2="8.00004" y2="14.6666" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00DBCD"></stop>
+                    <stop offset="1" stop-color="#00BBE1"></stop>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_26731_46345" x1="8.33333" y1="10.3333" x2="8.33333" y2="14.6666" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00DBCD"></stop>
+                    <stop offset="1" stop-color="#00BBE1"></stop>
+                  </linearGradient>
+                  <linearGradient id="paint2_linear_26731_46345" x1="8.00004" y1="5.66669" x2="8.00004" y2="10.3334" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00DBCD"></stop>
+                    <stop offset="1" stop-color="#00BBE1"></stop>
+                  </linearGradient>
+                  <linearGradient id="paint3_linear_26731_46345" x1="8.00004" y1="5.66669" x2="8.00004" y2="10.3334" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00DBCD"></stop>
+                    <stop offset="1" stop-color="#00BBE1"></stop>
+                  </linearGradient>
+                  <linearGradient id="paint4_linear_26731_46345" x1="8.33333" y1="1.33331" x2="8.33333" y2="5.66665" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00DBCD"></stop>
+                    <stop offset="1" stop-color="#00BBE1"></stop>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <!-- Stop icon, same shape as .mobile-visualize-button's own (see the
+                   mobile-float-actions markup further down) - this button had no
+                   Stop-state icon at all before, just the hierarchy icon above staying
+                   on screen unchanged while visualizing. Toggled via CSS off
+                   `#root.visualizing`, not `.split-panes-wrapper.visualizing` like
+                   the other two Visualize buttons - see playground.css's comment on
+                   this button's Stop-state color rule for why. -->
+              <svg class="visualize-stop-icon" width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="12" height="12" rx="2" fill="currentColor" />
+              </svg>
+            <span class="visualize-text">Visualize</span>
+          </div>
+          <div class="mobile-top-bar-run-button run">
+
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.91675 1.75L11.0834 7L2.91675 12.25V1.75Z" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+          </div>
+          <!-- Mobile overflow menu: groups Share and Dark mode behind a single three-dot
+               trigger, mirroring the desktop terminal top bar's overflow menu
+               (.terminal-overflow-menu-wrapper / #toggle-overflow-menu-desktop). -->
+          <div class="mobile-overflow-menu-wrapper">
+            <button type="button" class="mobile-overflow-menu-btn" id="toggle-overflow-menu-mobile" title="More options">
+              <img class="svg" src="https://cdn.playground-v2.programiz.com/assets/icons/more-vertical.svg" />
+            </button>
+            <div class="mobile-overflow-menu" id="mobile-overflow-menu">
+              <button type="button" class="share-button-mob mobile-overflow-menu-item" title="Share">
+                <img class="svg share-icon" src="https://cdn.playground-v2.programiz.com/assets/icons/share.svg" />
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content-wrapper">
+        <div class="sidebar-wrapper">
+          <a target="_blank"
+            href="https://www.programiz.com/python-programming/online-compiler/"
+            class="change-lang-btn python active"
+            title="Online Python Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/python.svg" alt="Python Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/r/online-compiler/"
+            class="change-lang-btn r " title="Online R Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/r.svg" alt="R Programming Online" />
+          </a>
+
+          <a target="_blank" href="https://www.programiz.com/sql/online-compiler/" class="change-lang-btn sql"
+            title="Online SQL Editor">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/sql.svg" alt="SQL Online" />
+          </a>
+
+          <a target="_blank" href="https://www.programiz.com/html/online-compiler/" class="change-lang-btn html"
+            title="Online HTML/CSS Editor">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/html.svg" alt="HTML/CSS Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/java-programming/online-compiler/"
+            class="change-lang-btn java " title="Online Java Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/java.svg" alt="Java Online" />
+          </a>
+          <!-- <a target="_blank"
+            href="https://www.programiz.com/kotlin-programming/online-compiler/"
+            class="change-lang-btn kotlin "
+            title="Online Kotlin Compiler (Editor)">
+            <img class="change-lang-btn-icon svg" src="./assets/icons/kotlin.svg" />
+          </a> -->
+          <a target="_blank"
+            href="https://www.programiz.com/kotlin-programming/online-compiler/"
+            class="change-lang-btn kotlin "
+            title="Online Kotlin Compiler (Editor)">
+            <img class="change-lang-btn-icon svg" src="./assets/icons/kotlin.svg" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/c-programming/online-compiler/"
+            class="change-lang-btn c " title="Online C Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/c.svg" alt="C Programming Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/cpp-programming/online-compiler/"
+            class="change-lang-btn cpp " title="Online C++ Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/cpp.svg" alt="C++ Programming Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/csharp-programming/online-compiler/"
+            class="change-lang-btn csharp " title="Online C# Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/csharp.svg" alt="C# Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/javascript/online-compiler/"
+            class="change-lang-btn javascript "
+            title="Online JavaScript Compiler (Editor)">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/javascript.svg" alt="JavaScript Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/typescript/online-compiler/"
+            class="change-lang-btn typescript "
+            title="Online Typescript Compiler (Editor)">
+            <img class="change-lang-btn-icon svg" src="./assets/icons/typescript.svg" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/golang/online-compiler/"
+            class="change-lang-btn golang "
+            title="Online Golang Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/golang.svg" alt="Golang Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/rust/online-compiler/"
+            class="change-lang-btn rust " title="Online Rust Compiler">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/rust.svg" alt="Rust Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/scala/online-compiler/"
+            class="change-lang-btn scala "
+            title="Online Scala Compiler (Editor)">
+            <img class="change-lang-btn-icon svg" src="./assets/icons/scala.svg" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/dart/online-compiler/"
+            class="change-lang-btn dart "
+            title="Online Dart Compiler (Editor)">
+            <img class="change-lang-btn-icon svg" src="./assets/icons/dart.svg" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/ruby/online-compiler/"
+            class="change-lang-btn ruby "
+            title="Online Ruby Compiler (Editor)">
+            <img class="change-lang-btn-icon svg" src="./assets/icons/ruby.svg" />
+          </a>
+          <!-- <a target="_blank"
+            href="https://www.programiz.com/bash/online-compiler/"
+            class="change-lang-btn bash "
+            title="Online Bash Interpreter (Editor)">
+            <img class="change-lang-btn-icon svg" src="./assets/icons/bash.svg" />
+          </a> -->
+          <a target="_blank"
+            href="https://www.programiz.com/php/online-compiler/"
+            class="change-lang-btn php " title="Online PHP Compiler ">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/php.svg" alt="PHP Online" />
+          </a>
+          <a target="_blank"
+            href="https://www.programiz.com/swift/online-compiler/"
+            class="change-lang-btn swift " title="Online Swift Compiler ">
+            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/swift.svg" alt="Swift Online" />
+          </a>
+        </div>
+        <div class="editor-workspace-wrapper">
+          <div class="split-panes-wrapper">
+            <div class="editor-wrapper">
+              <div class="editor-desktop-top-bar">
+                <div class="file-name" id="executed-file-name" title="main.py">
+                  main.py                </div>
+                <div class="desktop-top-bar__btn-wrapper">
+                  <!-- Change first none to flex to re-enable the save button -->
+                  <!--  Uncomment this if require in future -->
+                  <!-- <button class="desktop-save-button"
+                                  style="display: block">
+
+                                  <span>
+                                      &nbsp;Save&nbsp;
+                                  </span>
+                              </button> -->
+                  <button class="desktop-visualize-button visualize"
+                    style="display: flex">
+                    <!-- Inline (not <img src="...">) so `fill="currentColor"` actually
+                         inherits this button's existing light/dark text color - an
+                         externally-referenced SVG loaded via <img> can't see page CSS.
+
+                         Two icons share this same slot ahead of .visualize-text, toggled by CSS
+                         off `.split-panes-wrapper.visualizing` (see .visualize-start-icon /
+                         .visualize-stop-icon in playground.css) - only one is ever actually in
+                         flow at a time, so this doesn't add a second element competing for space.
+                         Desktop nav button only: the mobile floating/top-bar Visualize buttons
+                         deliberately stay text-only in their default state (only .visualize-stop-icon
+                         is shared with them, for the active "Stop" state) - eye icon left out there
+                         per explicit scope. -->
+                    <!-- <svg class="visualize-start-icon" width="12" height="12" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="visualize-stop-icon" width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1" y="1" width="12" height="12" rx="2" fill="currentColor" />
+                    </svg> -->
+                    <span class="visualize-text">
+                      &nbsp;Visualize&nbsp;
+                    </span>
+                  </button>
+                  <button class="desktop-run-button run">
+                    <span class="run-text">
+                      &nbsp;Run
+                   <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.91675 1.75L11.0834 7L2.91675 12.25V1.75Z"
+                      fill="#fff"
+                      stroke="#fff"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div id="editor"># Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+print("Start small. Ship something.")</div>
+              <!-- React portal target for Visualize line-highlight decorations
+                   (`VisualizerArrow`). A sibling of `#editor`, never a child --
+                   Monaco owns `#editor`'s content exclusively. Positioned via
+                   CSS (position: absolute; inset: 0) relative to
+                   `.editor-wrapper`, which is why `.editor-wrapper` carries
+                   `position: relative`. -->
+              <div class="visualize-decoration-overlay"></div>
+            </div>
+
+            <!-- Moved out from inside `.editor-wrapper` to be a direct child of
+                 `.split-panes-wrapper` instead (sibling of `.editor-wrapper`/`.terminal-wrapper`).
+                 The mobile compiler/output tab toggle (`setSplitMode()` in client.js) shows one of
+                 those two panes at a time via `display: none` on the other - since a `display: none`
+                 ancestor hides descendants no matter their own `position` (fixed doesn't exempt an
+                 element from an ancestor's `display: none`, it only takes the element out of normal
+                 flow), nesting this group inside `.editor-wrapper` meant it vanished along with the
+                 editor whenever the output tab was active. `.split-panes-wrapper` itself is never
+                 hidden by the tab toggle, so this group now stays visible on both tabs. Staying a
+                 descendant of `.split-panes-wrapper` (rather than moving further up, e.g. to
+                 `.editor-workspace-wrapper`) also keeps the `.split-panes-wrapper.visualizing ...`
+                 rules in playground.css (hiding `.mobile-run-button` / showing
+                 `.mobile-visualize-controls-root` while visualizing) matching unchanged. -->
+            <!-- React portal target for Visualize step controls, mobile-sized copy of
+                 .visualize-controls-root (the desktop top-bar one) - same underlying
+                 VisualizerControls instance's UI, portaled to two places at once, each
+                 shown/hidden independently by CSS media query rather than duplicating any
+                 component logic. Deliberately a SEPARATE `position: fixed` element from
+                 `.mobile-float-actions` below (not a flex child of it) so it can be
+                 horizontally centered on its own, independent of the Run/Visualize buttons'
+                 right-anchored position - easier to see/reach mid-trace than tucked into the
+                 corner group. -->
+            <div class="mobile-visualize-controls-root"></div>
+
+            <!-- Floating mobile Run/Visualize buttons, grouped into one flex row so the two
+                 buttons don't need independently hardcoded pixel offsets to sit apart.
+                 Individual buttons keep their own classes/behavior unchanged; only their
+                 positioning moves to the group. -->
+            <div class="mobile-float-actions">
+              <!-- This inline `display` must say 'flex', not 'block': .mobile-visualize-button's
+                   own rule in playground.css is `display: flex; align-items: center; gap: 4px;`,
+                   and an inline style always wins over an external stylesheet rule for the same
+                   property (same reason the .mobile-top-bar-visualize-button/.mobile-visualize-button
+                   hide-at-desktop media query further down needs !important). A stray 'block' here
+                   silently killed `align-items`/`gap` (both no-ops outside a flex/grid container),
+                   leaving the icon and text without their intended alignment/spacing - the icon+text
+                   pairing this button shares with .desktop-visualize-button below relies on this
+                   being flex just like that button's own (already-correct) inline style is. -->
+              <button class="mobile-visualize-button visualize"
+                style="display: flex">
+                <svg class="visualize-stop-icon" width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="12" height="12" rx="2" fill="currentColor" />
+                </svg>
+                <span class="visualize-text">Visualize</span>
+              </button>
+              <button class="mobile-run-button run">
+                Run
+              </button>
+            </div>
+
+            <!-- Draggable divider between .editor-wrapper and .terminal-wrapper - desktop-only
+                 (hidden below 800px via playground.css; the two mobile-only portal-target divs
+                 above are `position: fixed` and don't participate in `.split-panes-wrapper`'s
+                 flex layout, so this being between them and .terminal-wrapper in DOM order rather
+                 than immediately after .editor-wrapper doesn't affect the visual flex order).
+                 See initResizablePanes() in client.js for the drag behavior. -->
+            <div class="panes-divider" id="panes-divider" role="separator" aria-orientation="vertical">
+              <span class="panes-divider__handle" aria-hidden="true">
+                <svg width="28" height="66" viewBox="0 0 28 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#panes-divider-handle-clip)">
+                    <g filter="url(#panes-divider-handle-shadow)">
+                      <rect class="panes-divider__handle-bg" x="4" y="1" width="20" height="56" rx="4" fill="white"/>
+                      <rect class="panes-divider__handle-border" x="4.5" y="1.5" width="19" height="55" rx="3.5" stroke="#D3DCE6"/>
+                    </g>
+                    <path class="panes-divider__handle-arrow" d="M18.2427 26.3633L20.364 28.4846L18.2427 30.6059" stroke="#25265E" stroke-opacity="0.4" stroke-width="1.00346" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="panes-divider__handle-arrow" d="M9.75732 30.6059L7.636 28.4846L9.75732 26.3633" stroke="#25265E" stroke-opacity="0.4" stroke-width="1.00346" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="panes-divider__handle-arrow" d="M20.364 28.4856L15.4143 28.4856" stroke="#25265E" stroke-opacity="0.4" stroke-width="1.00346" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="panes-divider__handle-arrow" d="M7.63597 28.4856L12.5857 28.4856" stroke="#25265E" stroke-opacity="0.4" stroke-width="1.00346" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="panes-divider__handle-dot" cx="10" cy="6" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="14" cy="6" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="18" cy="6" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="10" cy="10" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="14" cy="10" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="18" cy="10" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="10" cy="47" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="14" cy="47" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="18" cy="47" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="10" cy="51" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="14" cy="51" r="1" fill="#E3E3E3"/>
+                    <circle class="panes-divider__handle-dot" cx="18" cy="51" r="1" fill="#E3E3E3"/>
+                  </g>
+                  <defs>
+                    <filter id="panes-divider-handle-shadow" x="-20" y="-15" width="68" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                      <feOffset dy="8"/>
+                      <feGaussianBlur stdDeviation="12"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0.0190986 0 0 0 0 0.593584 0 0 0 0 0.916732 0 0 0 0.08 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                    <clipPath id="panes-divider-handle-clip">
+                      <rect width="28" height="66" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </div>
+
+            <div class="terminal-wrapper">
+              <div class="terminal-desktop-top-bar">
+                <div class="shell-name">
+                  Output                </div>
+                <div class="terminal-desktop-top-bar__btn-wrapper">
+                  <button class="share-button" title="Share">
+                    <img class="toggle-expanded-mode-mobile-icon svg share-icon" src="https://cdn.playground-v2.programiz.com/assets/icons/share.svg" />
+                  </button>
+                  <!-- Overflow menu grouping Full screen / Theme behind a single
+                       three-dot trigger, freeing up row width now that Share is the only
+                       always-visible control besides it. `.terminal-overflow-menu-wrapper`
+                       carries `position: relative` purely to anchor the absolutely-positioned
+                       `.terminal-overflow-menu` panel - the panel can't be a child of the
+                       trigger `<button>` since it itself contains `<button>`s (invalid nesting). -->
+                  <div class="terminal-overflow-menu-wrapper">
+                    <button type="button" class="terminal-overflow-menu-btn" id="toggle-overflow-menu-desktop" title="More options">
+                      <img class="svg" src="https://cdn.playground-v2.programiz.com/assets/icons/more-vertical.svg" />
+                    </button>
+                    <div class="terminal-overflow-menu" id="terminal-overflow-menu">
+                      <button type="button" id="toggle-expanded-mode-desktop" class="terminal-overflow-menu-item">
+                        <!-- Inlined (rather than <img src="expand.svg">, like the mobile
+                             overflow menu's icons) so `fill="currentColor"` can pick up this
+                             button's own text color - light mode's rgba(37,38,94,0.7) and
+                             dark mode's #ffffff (see .dark-mode .terminal-overflow-menu-item) -
+                             an externally-referenced <img>'s SVG can't inherit page CSS at all,
+                             which left a fixed dark fill invisible against dark mode's dropdown
+                             background. -->
+                        <svg class="fullscreen-menu-icon enter" width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.038 2.22a.889.889 0 000-1.778v1.777zM.445 5.033a.889.889 0 101.778 0H.445zm13.334 0a.889.889 0 001.777 0H13.78zM10.964.44a.889.889 0 000 1.778V.441zm0 13.334a.889.889 0 000 1.778v-1.778zm4.592-2.815a.889.889 0 00-1.777 0h1.777zm-13.333 0a.889.889 0 00-1.778 0h1.778zm2.815 4.593a.889.889 0 000-1.778v1.778zm0-15.111H2.815v1.777h2.223V.442zm-2.223 0a2.37 2.37 0 00-2.37 2.37h1.778c0-.327.265-.593.592-.593V.442zm-2.37 2.37v2.222h1.778V2.812H.445zm15.111 2.222V2.812H13.78v2.222h1.777zm0-2.222a2.37 2.37 0 00-2.37-2.37v1.777c.327 0 .593.265.593.593h1.777zm-2.37-2.37h-2.222v1.777h2.222V.441zm-2.222 15.11h2.222v-1.777h-2.222v1.778zm2.222 0a2.37 2.37 0 002.37-2.37H13.78a.593.593 0 01-.593.593v1.778zm2.37-2.37V10.96H13.78v2.222h1.777zM.446 10.96v2.222h1.777V10.96H.445zm0 2.222a2.37 2.37 0 002.37 2.37v-1.777a.593.593 0 01-.593-.593H.445zm2.37 2.37h2.222v-1.777H2.816v1.778z" fill="currentColor" />
+                        </svg>
+                        <svg class="fullscreen-menu-icon exit" width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.926 1.334a.889.889 0 10-1.778 0h1.778zM1.333 4.15a.889.889 0 100 1.778V4.149zm13.334 1.778a.889.889 0 000-1.778v1.778zm-2.815-4.593a.889.889 0 00-1.778 0h1.778zm-1.778 13.334a.889.889 0 001.778 0h-1.778zm4.593-2.815a.889.889 0 000-1.778v1.778zM1.334 10.075a.889.889 0 000 1.778v-1.778zm2.814 4.593a.889.889 0 001.778 0H4.148zm0-13.334v2.223h1.778V1.334H4.148zm0 2.223a.593.593 0 01-.592.592v1.778a2.37 2.37 0 002.37-2.37H4.148zm-.592.592H1.333v1.778h2.223V4.149zm11.11 0h-2.221v1.778h2.222V4.149zm-2.221 0a.593.593 0 01-.593-.593h-1.778a2.37 2.37 0 002.37 2.37V4.15zm-.593-.593V1.334h-1.778v2.222h1.778zm0 11.112v-2.222h-1.778v2.222h1.778zm0-2.222c0-.328.265-.593.593-.593v-1.778a2.37 2.37 0 00-2.37 2.37h1.777zm.593-.593h2.222v-1.778h-2.222v1.778zm-11.111 0h2.222v-1.778H1.334v1.778zm2.222 0c.327 0 .592.265.592.593h1.778a2.37 2.37 0 00-2.37-2.37v1.777zm.592.593v2.222h1.778v-2.222H4.148z" fill="currentColor" />
+                        </svg>
+                        <span class="fullscreen-menu-label enter">Full screen</span>
+                        <span class="fullscreen-menu-label exit">Exit full screen</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- React portal target for Visualize step controls
+                       (Previous/Next/Reset/Step-counter/Play-Pause). Empty and
+                       static until the bridge portals `<VisualizerControls />`
+                       into it once a trace exists. Only shown while
+                       `.split-panes-wrapper.visualizing` (see playground.css),
+                       same as .visualize-canvas-root below. -->
+                  <div class="visualize-controls-root"></div>
+                </div>
+              </div>
+              <div id="terminal"></div>
+              <!-- React portal target for the visualizer's own output canvas
+                   (`VisualizeCanvas` - stdout console + memory/heap diagram
+                   together, exactly as the standalone visualizer renders
+                   them). A straight 1:1 swap for `#terminal` while
+                   visualizing, not a custom re-composition - no separate
+                   Output/Memory toggle needed, VisualizeCanvas already
+                   handles both internally. Hidden by default via CSS; empty
+                   and static, same whole-node-ownership rule as `#editor`. -->
+              <div class="visualize-canvas-root"></div>
+            </div>
+            <div class="desktop-right-ad">
+                <!-- TAGNAME: Programiz_Compiler_300x600 -->
+                <div id='programizcom50429'>
+                </div>
+              </div>
+          </div>
+
+          <!-- <div class="adhesive-ad-wrapper">
+            <div id='programizcom50202'></div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer type="text/javascript">
+    const lang = "python";
+
+    var playStoreUrl =
+      "https://play.google.com/store/apps/details?id=com.programiz.learnpython",
+      appStoreUrl =
+      "https://apps.apple.com/app/apple-store/id1472188189?pt=120228772",
+      desktopUrl = "https://www.programiz.com/learn-python";
+
+    const desktopAdsButton = document.getElementById("ad-link");
+    const mobileAdsButton = document.getElementById("mobile-ad-link");
+
+    const challengeLinkProbability = 0 / 100; // in percentage
+    const hasChallengeLinkAsAds = Math.random() <= challengeLinkProbability;
+
+    if (hasChallengeLinkAsAds) {
+      const baseURL = "https://app.programiz.pro/community-challenges/home"
+      desktopAdsButton.innerHTML = `Python Challenges ❯`;
+      mobileAdsButton.innerHTML = `Python Challenges`;
+      desktopAdsButton.href = baseURL;
+      mobileAdsButton.href = baseURL;
+    } else {
+      const utm = "utm_source=programiz_compiler&utm_medium=referral&utm_audience=ORGANIC-FREEMIUM&utm_campaign=offer-pro&utm_content=interests_pro&utm_term=nav_floating_button"
+      const baseURL = `https://programiz.pro?${utm}`
+
+      desktopAdsButton.innerHTML = `Programiz PRO ❯`;
+      mobileAdsButton.innerHTML = `Programiz PRO`;
+      desktopAdsButton.href = baseURL;
+      mobileAdsButton.href = baseURL;
+    }
+
+    desktopAdsButton.target = "_blank"
+    mobileAdsButton.target = "_blank"
+  </script>
+  <!-- The use of the cloudflare cdn for all external libraries is intential. We are trying to reduce the number
+         of DNS lookups.
+    -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.41.0/ace.js"></script>
+  <!-- Ace lazy-loads its theme files (theme-textmate.js/theme-twilight.js) on demand via its
+       own internal AMD-style define()/require() the first time .setTheme() needs one it hasn't
+       loaded yet. If that happens to occur after Monaco's loader.js below has already
+       overwritten the global window.define/window.require with its own, the theme script
+       registers against the wrong loader and Ace throws "couldn't load module ... or it didn't
+       call define". Preloading both here, between ace.js and Monaco's loader.js, guarantees
+       they register against Ace's own define while it's still the active global -- textmate
+       (the default light theme) currently happens to dodge this by loading synchronously
+       before Monaco's script runs, but preloading it too removes any timing fragility. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.41.0/theme-textmate.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.41.0/theme-twilight.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/monaco-editor@0.50.0/min/vs/loader.js"></script>
+  <script>
+    // Read by src/setPublicPath.js so webpack's runtime chunk loader (used
+    // by dynamic import(), e.g. the Visualize module) requests the same
+    // origin this entry bundle itself was served from, instead of always
+    // defaulting to same-origin /build/.
+    window.__ASSET_PATH__ = "https://cdn.playground-v2.programiz.com/";
+
+    // Read by src/client.js on page load to auto-enter Visualize mode for links that carry
+    // ?visualize=true - see the matching comment in config.php for how this is read from $_GET.
+    window.__VISUALIZE_ON_LOAD__ = false;
+  </script>
+  <script defer src="https://cdn.playground-v2.programiz.com/build/final.e40666e7ab922325defa.js"></script>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKXT7MH" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Change the ad setting link. We usually recomend putting them in the footer of your website -->
+  <!-- Change Consent Option FundingChoices -->
+  <div
+    id="fluid-privacy-opt-out-link"
+    onmouseover="this.style.color='rgb(25, 103, 210)'; this.style.cursor='pointer'"
+    onmouseout="this.style.color='#CCCCCC'; this.style.cursor='auto'"></div>
+  <script type="text/javascript">
+    const privacyOptOutLink = document.getElementById("fluid-privacy-opt-out-link");
+    window.googlefc = window.googlefc || {
+      callbackQueue: []
+    };
+    window.googlefc.ccpa = window.googlefc.ccpa || {}
+    window.googlefc.callbackQueue.push({
+      "CONSENT_API_READY": () => {
+        if (!privacyOptOutLink) {
+          return;
+        }
+        privacyOptOutLink.addEventListener("click", () => googlefc.showRevocationMessage());
+        !!window.__tcfapi && window.__tcfapi("addEventListener", 2, (tcData, success) => {
+          if (success && tcData.gdprApplies) {
+            privacyOptOutLink.innerText = "Change GDPR Consent";
+            return;
+          }
+          if (googlefc.ccpa.InitialCcpaStatusEnum() === googlefc.ccpa.InitialCcpaStatusEnum.NOT_OPTED_OUT) {
+            window.googlefc.ccpa.overrideDnsLink = true;
+            privacyOptOutLink.innerText = "Don't sell or share my personal info";
+            privacyOptOutLink.addEventListener("click", () => googlefc.ccpa.openConfirmationDialog((optedOut) => {
+              if (optedOut) {
+                privacyOptOutLink.style.display = "none";
+              }
+            }));
+            return
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End Change Consent Option FundingChoices -->
+  <!-- Banner script -->
+  <!-- Re-enabled: re-measured CLS with the banner live and it wasn't a real
+       contributor, contrary to the earlier Lighthouse-trace read that led
+       to disabling this block entirely. Runs during occasional marketing
+       campaigns (roughly one week every two months). -->
+  <style>
+    @media (min-width: 992px) {
+      body {
+        padding-top: 80px;
+      }
+    }
+  </style>
+  <script>
+    const rootElement = document.getElementById("root");
+    const bannerObserver = new MutationObserver(() => {
+      const bannerElement = document.getElementById("pgz-banner");
+
+      if (bannerElement) {
+        // Resize the root element when the banner is seen
+        rootElement.style.height = `calc(100vh - ${bannerElement.offsetHeight}px)`;
+      } else {
+        // When the banner is closed, hand height back to #root's own CSS rule
+        // (`.container { height: var(--app-height, 100vh) }`) instead of clobbering it with a
+        // literal 100vh. This observer fires on every DOM mutation under <body> -- far more
+        // often than just banner open/close -- so a hardcoded reset here was permanently pinning
+        // #root's inline height to 100vh on every device, including on mobile where the banner
+        // never even shows (it's min-width:992px-gated). An inline style always wins over a
+        // class rule no matter what that rule's own CSS custom property says, so this was
+        // silently defeating setupSoftKeyboardViewport()'s mobile soft-keyboard shrink
+        // (src/client.js) -- the editor's shell never actually resized above the keyboard.
+        rootElement.style.removeProperty('height');
+      }
+
+      if (typeof globalThis.refreshEditorLayout === 'function') {
+        globalThis.refreshEditorLayout();
+      }
+    });
+
+    bannerObserver.observe(document.body, {
+      childList: true
+    });
+  </script>
+  <script
+    src="https://programiz-pro-spaces.sfo3.digitaloceanspaces.com/programiz-static/assets/scripts/banner.js"
+    data-utm_source="compiler"></script>
+  <!-- Banner script end -->
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2a56c1d88e70e7f',t:'MTc4NjYwMDAxNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"0a465ad039704d1f9760ad556f6f3cdd","r":1}' crossorigin="anonymous"></script>
+</body>
+
+</html>
